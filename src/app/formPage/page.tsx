@@ -3,6 +3,7 @@ import React from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Counter from "@/components/counter.component";
 
 const FormPage = () => {
   const style = {
@@ -191,6 +192,7 @@ const FormPage = () => {
           <button>Submit</button>
         </form>
       </div>
+      <Counter />
     </>
   );
 };
