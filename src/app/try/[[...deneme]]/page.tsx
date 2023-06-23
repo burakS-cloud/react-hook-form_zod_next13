@@ -1,15 +1,15 @@
-"use client";
+// "use client";
 import React from "react";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 const Deneme = () => {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   return (
     <>
       <div>Deneme</div>
-      <span>Pathname: {pathname}</span>
+      {/* <span>Pathname: {pathname}</span> */}
       <br />
       <button>
         <Link
@@ -26,6 +26,7 @@ const Deneme = () => {
         src={
           "https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=1xw:0.84415xh;center,top"
         }
+        alt="cat image"
       />
     </>
   );
