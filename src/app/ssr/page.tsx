@@ -5,6 +5,7 @@ type Repo = {
 
 async function fetchData(): Promise<Repo> {
   const res = await fetch("https://api.github.com/repos/vercel/next.js");
+  //throw new Error("some error occured");
   return res.json();
 }
 

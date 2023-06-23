@@ -25,8 +25,18 @@ const FormPage = () => {
       lastName: z.string().min(2).max(20),
       age: z.number().min(1).max(100),
       email: z.string().email(),
-      password: z.string().min(5).max(20),
-      confirmPassword: z.string().min(5).max(20),
+      password: z
+        .string()
+        .min(5, {
+          message: "Password must be at least 5 characters long.",
+        })
+        .max(20),
+      confirmPassword: z
+        .string()
+        .min(5, {
+          message: "Password confirmation must be at least 5 characters long.",
+        })
+        .max(20),
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: "Passwords do not match.",
@@ -156,21 +166,18 @@ const FormPage = () => {
             type="password"
             {...register("password")}
           />
-          {lengthError(errors.password?.type, "password", "5") && (
-            <span style={style.error}>
-              {lengthError(errors.password?.type, "password", "5")}
-            </span>
-          )}
+          {<span style={style.error}>{errors.password?.message}</span>}
+
           <label htmlFor="">Confirm Password</label>
           <input
             style={style.inputs}
             type="password"
             {...register("confirmPassword")}
           />
-          {/* {errors.confirmPassword?.message && (
+          {errors.confirmPassword?.message && (
             <span style={style.error}>{errors.confirmPassword.message}</span>
-          )} */}
-          {lengthError(
+          )}
+          {/* {lengthError(
             errors.confirmPassword?.type,
             "confirmPassword",
             "5"
@@ -188,7 +195,7 @@ const FormPage = () => {
                   )
                 : errors.confirmPassword?.message}
             </span>
-          )}
+          )} */}
           <button>Submit</button>
         </form>
       </div>
