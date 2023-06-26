@@ -25,6 +25,9 @@ const MyComponent = () => {
         style={customStyles}
       >
         <h1>Modal Content</h1>
+        <label htmlFor="">First Name</label>
+        <input type="text" />
+        <button type="button">Submit</button>
         <button onClick={() => setIsOpen(false)}>Close Modal</button>
       </Modal>
     </div>

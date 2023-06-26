@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Counter from "@/components/counter.component";
+import styles from "./formStyles.module.css";
 
 const FormPage = () => {
   const style = {
@@ -96,9 +97,11 @@ const FormPage = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "8rem",
+          marginTop: "-2rem",
+          flexDirection: "column",
         }}
       >
+        <h2 className={styles.formHeader}>Form</h2>
         <form
           onSubmit={handleSubmit(submitData)}
           style={{
