@@ -1,3 +1,18 @@
+import type { Metadata } from "next";
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export function generateMetadata({ params, searchParams }: Props): Metadata {
+  console.log("params:", params);
+  console.log("searchParams:", searchParams);
+  return {
+    title: "Tarifist IOS Page",
+  };
+}
+
 export default function Page({ params }: { params: { slug: string } }) {
   return <div>My Post: {params.slug}</div>;
 }
