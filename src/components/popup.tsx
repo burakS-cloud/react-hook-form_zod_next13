@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Modal from "react-modal";
-const MyComponent = () => {
+const MyComponent = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const customStyles = {
     overlay: {
@@ -24,11 +24,7 @@ const MyComponent = () => {
         onRequestClose={() => setIsOpen(false)}
         style={customStyles}
       >
-        <h1>Modal Content</h1>
-        <label htmlFor="">First Name</label>
-        <input type="text" />
-        <button type="button">Submit</button>
-        <button onClick={() => setIsOpen(false)}>Close Modal</button>
+        {children}
       </Modal>
     </div>
   );
