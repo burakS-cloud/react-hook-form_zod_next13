@@ -1,6 +1,7 @@
 // import './globals.css'
 import { Inter } from "next/font/google";
 import { CounterContextProvider } from "@/context/counter.context";
+import ExampleClientComponent from "./exampleClientComp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div style={{ color: "red" }}>I am everywhereeeee</div>
+        <ExampleClientComponent />
         <CounterContextProvider>{children}</CounterContextProvider>
       </body>
     </html>
